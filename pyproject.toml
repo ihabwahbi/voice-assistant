@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "voice-assistant"
+version = "0.1.0"
+description = ""
+authors = ["Ihab Wahbi <ihab.a.wahbi@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+python-dotenv = "^1.0.1"
+pydantic = "^2.10.4"
+openai = "^1.58.1"
+sounddevice = "^0.5.1"
+soundfile = "^0.12.1"
+numpy = "^2.2.1"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+pytest-cov = "^6.0.0"
+black = "^24.10.0"
+isort = "^5.13.2"
+mypy = "^1.14.0"
+pylint = "^3.3.3"
+pre-commit = "^4.0.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py312']  # Update to match your Python version
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+[tool.mypy]
+python_version = "3.12"  # Update to match your version
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pylint.messages_control]
+disable = ["C0111", "C0103"]
+
